@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: shopping-cart-service
+
+shopping-cart:
+  dynamodb:
+    endpoint: ${DYNAMODB_ENDPOINT:http://localhost:8000}
+    region: ${AWS_REGION:eu-central-1}
+    access-key: ${AWS_ACCESS_KEY_ID:local}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:local}
+    table-name: ${SHOPPING_CART_TABLE:shopping-cart}
+    create-table: ${CREATE_DYNAMODB_TABLE:true}
