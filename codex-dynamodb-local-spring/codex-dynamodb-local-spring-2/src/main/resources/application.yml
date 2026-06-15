@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: shopping-cart-service
+
+app:
+  dynamodb:
+    table-name: shopping-carts
+    region: ${AWS_REGION:us-east-1}
+    create-table: false

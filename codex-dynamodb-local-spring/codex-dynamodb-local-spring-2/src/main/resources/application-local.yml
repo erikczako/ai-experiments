@@ -1,0 +1,4 @@
+app:
+  dynamodb:
+    endpoint: http://localhost:8000
+    create-table: true
