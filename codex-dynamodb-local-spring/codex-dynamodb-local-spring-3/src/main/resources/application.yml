@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: shopping-cart
+
+cart:
+  dynamodb:
+    table-name: ${CART_DYNAMODB_TABLE_NAME:shopping-carts}
+    region: ${AWS_REGION}
+    initialize-table: false
+  security:
+    username: ${CART_API_USERNAME}
+    password: ${CART_API_PASSWORD}

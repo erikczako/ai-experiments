@@ -1,0 +1,8 @@
+cart:
+  dynamodb:
+    table-name: shopping-carts-test
+    region: us-east-1
+    initialize-table: true
+  security:
+    username: test-user
+    password: test-password
