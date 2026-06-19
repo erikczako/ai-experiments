@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: shopping-cart-service
+
+cart:
+  dynamodb:
+    table-name: shopping-cart
+    create-table: false
