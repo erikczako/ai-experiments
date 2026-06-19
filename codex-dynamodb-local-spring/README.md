@@ -11,12 +11,12 @@ coverage gate. Each prompt tightened the constraints or added a requirement.
 
 ## The four runs
 
-| Dir | Prompt focus | Notable result |
-| --- | --- | --- |
-| [`codex-dynamodb-local-spring-1`](codex-dynamodb-local-spring-1/) | First pass. Build a cart service on DynamoDB Local, layered packages, tests, JaCoCo gate at 85%. | Java 21, `api`/`domain`/`infrastructure` packages, env-var configuration, downloads DynamoDB Local via a shell script. |
-| [`codex-dynamodb-local-spring-2`](codex-dynamodb-local-spring-2/) | Re-run with stricter expectations: Maven wrapper, Spring profiles, separate repository/service layers. | Java 25, `local` profile creates the table, `default` profile uses the AWS default credential chain, dedicated `DynamoDbTableInitializer`. |
-| [`codex-dynamodb-local-spring-3`](codex-dynamodb-local-spring-3/) | Adds HTTP Basic auth and scopes the cart to the authenticated user. DynamoDB Local started via `exec:java` instead of a shell script. | `web`/`service`/`persistence` packages, Spring Security config, integration test that boots the full app against an in-memory DynamoDB Local. |
-| [`codex-dynamodb-local-spring-4`](codex-dynamodb-local-spring-4/) | Targets Spring Boot 4.1. Drops the auth requirement in favour of an `X-User-Id` header so the focus stays on the persistence and config wiring. | Spring Boot 4.1 / Java 25, `web`/`service`/`repository`/`domain`/`config` packages, DynamoDB Local started in-process by a `@Profile("local")` `@Bean` (no shell script, no `exec:java`), native libs copied via `maven-dependency-plugin`. |
+| Dir | Prompt focus |
+| --- | --- |
+| [`codex-dynamodb-local-spring-1`](codex-dynamodb-local-spring-1/) | First pass. Build a cart service on DynamoDB Local, layered packages, tests, JaCoCo gate at 85%. |
+| [`codex-dynamodb-local-spring-2`](codex-dynamodb-local-spring-2/) | Re-run with stricter expectations: Maven wrapper, Spring profiles, separate repository/service layers. |
+| [`codex-dynamodb-local-spring-3`](codex-dynamodb-local-spring-3/) | Adds HTTP Basic auth and scopes the cart to the authenticated user. DynamoDB Local started via `exec:java` instead of a shell script. |
+| [`codex-dynamodb-local-spring-4`](codex-dynamodb-local-spring-4/) | Targets Spring Boot 4.1. Drops the auth requirement in favour of an `X-User-Id` header so the focus stays on the persistence and config wiring. |
 
 ## What stayed consistent
 
